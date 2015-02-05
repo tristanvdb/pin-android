@@ -33,25 +33,29 @@ android sdk
 # Create a device for 5.0.1 (API 21)
 ./create-device.sh 21
 
-./install-pin.sh 17 2.13-65163-gcc.4.6
-./install-pin.sh 17 2.14-67254-gcc.4.6
-./install-pin.sh 17 2.14-71313-gcc.4.6
-./install-pin.sh 17 2.14-71313-gcc.4.9
+./install-pin.sh 17 2.13-65163-gcc.4.6 # ok
+./install-pin.sh 17 2.14-67254-gcc.4.6 # ok
+./install-pin.sh 17 2.14-71313-gcc.4.6 # ok
+./install-pin.sh 17 2.14-71313-gcc.4.9 # soinfo_relocate(linker.cpp:975): cannot locate symbol "stpcpy" referenced by "/data/pin-2.14-71313-gcc.4.9/pin"...CANNOT LINK EXECUTABLE
 
-./install-pin.sh 18 2.13-65163-gcc.4.6
-./install-pin.sh 18 2.14-67254-gcc.4.6
-./install-pin.sh 18 2.14-71313-gcc.4.6
-./install-pin.sh 18 2.14-71313-gcc.4.9
+./install-pin.sh 18 2.13-65163-gcc.4.6 # ok
+./install-pin.sh 18 2.14-67254-gcc.4.6 # ok
+./install-pin.sh 18 2.14-71313-gcc.4.6 # ok
+./install-pin.sh 18 2.14-71313-gcc.4.9 # CANNOT LINK EXECUTABLE: cannot locate symbol "stpcpy" referenced by "/data/pin-2.14-71313-gcc.4.9/pin"...
 
-./install-pin.sh 19 2.13-65163-gcc.4.6
-./install-pin.sh 19 2.14-67254-gcc.4.6
-./install-pin.sh 19 2.14-71313-gcc.4.6
-./install-pin.sh 19 2.14-71313-gcc.4.9
+./install-pin.sh 19 2.13-65163-gcc.4.6 # ok
+./install-pin.sh 19 2.14-67254-gcc.4.6 # ok
+./install-pin.sh 19 2.14-71313-gcc.4.6 # ok
+./install-pin.sh 19 2.14-71313-gcc.4.9 # CANNOT LINK EXECUTABLE: cannot locate symbol "stpcpy" referenced by "/data/pin-2.14-71313-gcc.4.9/pin"...
 
-./install-pin.sh 21 2.13-65163-gcc.4.6
-./install-pin.sh 21 2.14-67254-gcc.4.6
-./install-pin.sh 21 2.14-71313-gcc.4.6
-./install-pin.sh 21 2.14-71313-gcc.4.9
+./install-pin.sh 21 2.13-65163-gcc.4.6 # error: only position independent executables (PIE) are supported.
+./install-pin.sh 21 2.14-67254-gcc.4.6 # WARNING: linker: /data/pin-2.14-67254-gcc.4.6/pin has text relocations. This is wasting memory and prevents security hardening. Please fix.
+                                       # WARNING: linker: /data/pin-2.14-67254-gcc.4.6/ia32/bin/pinbin has text relocations. This is wasting memory and prevents security hardening. Please fix.
+                                       # Aborted
+./install-pin.sh 21 2.14-71313-gcc.4.6 # WARNING: linker: /data/pin-2.14-71313-gcc.4.6/pin has text relocations. This is wasting memory and prevents security hardening. Please fix.
+                                       # WARNING: linker: /data/pin-2.14-71313-gcc.4.6/ia32/bin/pinbin has text relocations. This is wasting memory and prevents security hardening. Please fix.
+                                       # Aborted
+./install-pin.sh 21 2.14-71313-gcc.4.9 # Aborted
 ```
 
 ## Docs

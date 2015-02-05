@@ -1,12 +1,4 @@
 
-if [ -e android-pin.rc ]
-then
-  source android-pin.rc
-else
-  echo "Ressource file android-pin.rc is missing..."
-  exit
-fi
-
 if [ `android list avd | grep "Name: device-$api" | wc -l` -eq 0 ]
 then
   echo "Create device for api $1"

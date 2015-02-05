@@ -1,8 +1,8 @@
 
 > android-pin.rc
 echo >> android-pin.rc
-echo "export PATH=`pwd`/android-sdk-linux/tools/:$PATH" >> android-pin.rc
-echo "export PATH=`pwd`/android-sdk-linux/platform-tools/:$PATH" >> android-pin.rc
+echo "export PATH=`pwd`/android-sdk-linux/tools/:\$PATH" >> android-pin.rc
+echo "export PATH=`pwd`/android-sdk-linux/platform-tools/:\$PATH" >> android-pin.rc
 echo >> android-pin.rc
 echo "export PIN_VERSION=\"2.13-65163-gcc.4.6 2.14-67254-gcc.4.6 2.14-71313-gcc.4.6 2.14-71313-gcc.4.9\"" >> android-pin.rc
 echo "export ANDROID_VERSION=\"17 18 19 21\"" >> android-pin.rc
