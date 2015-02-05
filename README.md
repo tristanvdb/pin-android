@@ -1,4 +1,59 @@
 
+## Usage
+
+```bash
+git clone git@github.com:tristanvdb/pin-android.git
+cd pin-android
+
+# Downloads: * Android SDK
+#            * Pin 2.13 (r65163, NDK9),
+#            *     2.14 (r67254, NDK9),
+#            *     2.14 (r71313, NDK9 & NDK10)
+#            * BusyBox
+# Creates:   * android-pin.rc
+./install.sh
+source android-pin.rc
+
+# GUI interface to download different Android SDKs
+# I downloaded:   * 4.2.2 (API 17)
+#                 * 4.3.1 (API 18)
+#                 * 4.4.2 (API 19)
+#                 * 5.0.1 (API 21)
+android sdk
+
+# Create a device for 4.2.2 (API 17)
+./create-device.sh 17
+
+# Create a device for 4.3.1 (API 18)
+./create-device.sh 18
+
+# Create a device for 4.4.2 (API 19)
+./create-device.sh 19
+
+# Create a device for 5.0.1 (API 21)
+./create-device.sh 21
+
+./install-pin.sh 17 2.13-65163-gcc.4.6
+./install-pin.sh 17 2.14-67254-gcc.4.6
+./install-pin.sh 17 2.14-71313-gcc.4.6
+./install-pin.sh 17 2.14-71313-gcc.4.9
+
+./install-pin.sh 18 2.13-65163-gcc.4.6
+./install-pin.sh 18 2.14-67254-gcc.4.6
+./install-pin.sh 18 2.14-71313-gcc.4.6
+./install-pin.sh 18 2.14-71313-gcc.4.9
+
+./install-pin.sh 19 2.13-65163-gcc.4.6
+./install-pin.sh 19 2.14-67254-gcc.4.6
+./install-pin.sh 19 2.14-71313-gcc.4.6
+./install-pin.sh 19 2.14-71313-gcc.4.9
+
+./install-pin.sh 21 2.13-65163-gcc.4.6
+./install-pin.sh 21 2.14-67254-gcc.4.6
+./install-pin.sh 21 2.14-71313-gcc.4.6
+./install-pin.sh 21 2.14-71313-gcc.4.9
+```
+
 ## Docs
 
 [Jelly Bean Emulator](https://software.intel.com/en-us/android/articles/intel-atom-x86-image-for-android-4-2-jelly-bean-installation-instructions-recommended)
