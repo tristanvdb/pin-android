@@ -1,4 +1,9 @@
 
+I am taking a look at using Intel PIN on Android applications.
+In this repo I provide a collection of scripts to install the toolchain.
+
+I got PIN to work but I haven't look at cross-compiling a PIN tool.
+
 ## Usage
 
 ```bash
