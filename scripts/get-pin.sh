@@ -5,9 +5,11 @@
 #  2.14 (r71313, NDK9)  : 2.14-71313-gcc.4.6
 #  2.14 (r71313, NDK10) : 2.14-71313-gcc.4.9
 
-pushd $(ANDROID_PIN_PATH)/pin
+mkdir -p pin
 
-for pin_version in $ANDROID_PIN_VERSION
+pushd $ANDROID_PIN_PATH/pin
+
+for pin_version in $ANDROID_PIN_VERSIONS
 do
   if [ ! -e pin-$pin_version-android ]
   then

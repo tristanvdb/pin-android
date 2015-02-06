@@ -1,0 +1,4 @@
+scripts/android-pin.rc
+busybox-i686
+pin
+sdk

@@ -14,19 +14,19 @@ if [ -z $ANDROID_PIN_APIS ] ; then
   export ANDROID_PIN_APIS=19 # 4.4.2
 fi
 
-> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo "export ANDROID_PIN_PATH=$ANDROID_PIN_PATH"         >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo "export ANDROID_PIN_VERSIONS=$ANDROID_PIN_VERSIONS" >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo "export ANDROID_PIN_APIS=$ANDROID_PIN_APIS"         >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo "export PATH=$ANDROID_PIN_PATH/sdk/tools/:\$PATH"          >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo "export PATH=$ANDROID_PIN_PATH/sdk/platform-tools/:\$PATH" >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
-echo >> $(ANDROID_PIN_PATH)/scripts/android-pin.rc
+> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo >> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo "export ANDROID_PIN_PATH=$ANDROID_PIN_PATH"         >> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo "export ANDROID_PIN_VERSIONS=$ANDROID_PIN_VERSIONS" >> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo "export ANDROID_PIN_APIS=$ANDROID_PIN_APIS"         >> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo >> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo "export PATH=$ANDROID_PIN_PATH/sdk/tools/:\$PATH"          >> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo "export PATH=$ANDROID_PIN_PATH/sdk/platform-tools/:\$PATH" >> $ANDROID_PIN_PATH/scripts/android-pin.rc
+echo >> $ANDROID_PIN_PATH/scripts/android-pin.rc
 
-source $(ANDROID_PIN_PATH)/scripts/android-pin.rc
+source $ANDROID_PIN_PATH/scripts/android-pin.rc
 
-$(ANDROID_PIN_PATH)/scripts/get-busybox.sh
-$(ANDROID_PIN_PATH)/scripts/get-pin.sh
-$(ANDROID_PIN_PATH)/scripts/get-android-sdk.sh
+$ANDROID_PIN_PATH/scripts/get-busybox.sh
+$ANDROID_PIN_PATH/scripts/get-pin.sh
+$ANDROID_PIN_PATH/scripts/get-android-sdk.sh
 

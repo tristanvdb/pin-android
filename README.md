@@ -7,41 +7,59 @@ cd pin-android
 
 # Default configuration:
 #      export ANDROID_PIN_PATH=`pwd`
-#      export ANDROID_PIN_VERSIONS=2.14-71313-gcc.4.6
+#      export ANDROID_PIN_VERSIONS=2.14-71313-gcc.4.6 # Pin 2.14 (r71313, NDK9)
 #      export ANDROID_PIN_APIS=19
 
 # Downloads: * Android SDK
-#            * Pin 2.14 (r71313, NDK9) [recommended]
+#            * Requested Pin
 #            * BusyBox
 # Creates:   * android-pin.rc
 ./scripts/install.sh
 source scripts/android-pin.rc
 
 # GUI interface to download different Android SDKs:
-#      By default you need to select: Android 4.4.2 (API 19)
-#      The interface automatically select Android 5.0.1 (API 21) by default you won't need it
+#      I recommend to install Android 4.4.2 (API 19)
+#      By default Android 5.0.1 (API 21) will be installed (I don't use it).
 android sdk
 
-# Create one devices by selected API (default Android 4.4.2 (API 19) only)
-./create-device.sh
+# Create one devices by selected API [Android 4.4.2 (API 19)]
+./scripts/create-devices.sh
 
-# Install Pin 2.14 (r71313, NDK9) on the device with Android 4.4.2 (API 19)
-./install-pin.sh
+# Install selected versions of Pin on each device [Android 4.4.2 (API 19), Pin 2.14 (r71313, NDK9)]
+./scripts/install-pin.sh
+
+# Test all installation of Pin  [Android 4.4.2 (API 19), Pin 2.14 (r71313, NDK9)]
+./scripts/test-pin.sh
 ```
 
-I tested:
+Other versions that can be selected:
  * Android
   * 4.2.2 (API 17)
   * 4.3.1 (API 18)
-  * 4.4.2 (API 19) \[recomended\]
+  * 4.4.2 (API 19)
   * 5.0.1 (API 21)
  * Pin
   * Android NDK 9
-    * 2.13 (r65163)
-    * 2.13 (r67254)
-    * 2.14 (r71313) \[recomended\]
+    * 2.13 (r65163) : 2.14-65163-gcc.4.6
+    * 2.13 (r67254) : 2.14-67254-gcc.4.6
+    * 2.14 (r71313) : 2.14-71313-gcc.4.6
   * Android NDK 10
-    * 2.14 (r71313)
+    * 2.14 (r71313) : 2.14-71313-gcc.4.9
+
+To work with an installed version:
+```bash
+cd pin-android
+source scripts/android-pin.rc
+
+# Start the emulator on the device for 4.4.2 (API 19)
+emulator -avd device-19 &
+
+# To check the emulator status (offline or device)
+adb devices
+
+# Test Pin 2.14 (r71313) for NDK9
+adb shell "/data/pin-2.14-71313-gcc.4.6/pin -- /system/bin/ls"
+```
 
 ## Docs
 

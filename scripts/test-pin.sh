@@ -19,7 +19,7 @@ do
   while [ `adb devices | grep device$ | wc -l` -eq 0 ]; do sleep 1; done
   echo
 
-  $(ANDROID_PIN_PATH)/scripts/test-pin-on-device.sh
+  $ANDROID_PIN_PATH/scripts/test-pin-on-device.sh
 
   echo "Close the emulator to continue..."
   while [ ! `adb devices | grep device$ | wc -l` -eq 0 ]; do sleep 1; done
